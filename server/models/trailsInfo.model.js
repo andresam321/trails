@@ -2,12 +2,12 @@ const mongoose = require("mongoose")
 
 const TrailsInfo = new mongoose.Schema(
     {
-        personName:{
-            type:String,
-            required:[true,"A name is required"]
+        // complete:{
+        //     type:String,
+        //     required:[true,"A name is required"]
 
-        }, 
-        location: {
+        // }, 
+        trailUser: {
             type:String,
             
 
@@ -28,9 +28,18 @@ const TrailsInfo = new mongoose.Schema(
         zipCode:{
             type:Number
         },
-
-
-    }, {timestamps:true}
+        complete:{
+            type:String,
+            enum:["yes","no"]
+        },
+        date:{
+            type:String
+        },
+        createdBy:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+        },
+      },  {timestamps:true}
 )
 
 

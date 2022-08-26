@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+
 const mongoURI = "mongodb://localhost/trails"
 
 mongoose.connect(mongoURI, {
